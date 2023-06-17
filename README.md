@@ -15,6 +15,7 @@ I aim to ideally have sample code in this repo to look back on, as well as a rea
 - [ ] Control flow
 - [ ] Iteration
 - [ ] Methods/Functions
+- [ ] Package handling
 - [ ] Error handling
 - [ ] Code Structure
 
