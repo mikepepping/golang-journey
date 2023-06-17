@@ -1,9 +1,9 @@
 # golang-journey
 Personal golang learning.
 
-This is to track and store my own personal learning for Go the language.
+This is to track and store my own personal learning for the Go language.
 I've broken this down into my own personal strategy for learning languages.
-I aim to ideally have a sample code to look back on, as well as a readme/journal for each of the points below.
+I aim to ideally have sample code in this repo to look back on, as well as a readme/journal for each of the points below.
 
 ## Things to learn:
 
