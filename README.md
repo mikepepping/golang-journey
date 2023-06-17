@@ -15,7 +15,7 @@ I aim to ideally have sample code in this repo to look back on, as well as a rea
 - [ ] Control flow
 - [ ] Iteration
 - [ ] Methods/Functions
-- [ ] Package handling
+- [x] [Package handling](https://github.com/mikepepping/golang-journey/tree/main/package-handling)
 - [ ] Error handling
 - [ ] Code Structure
 
