@@ -9,8 +9,8 @@ I aim to ideally have sample code in this repo to look back on, as well as a rea
 
 ### Foundational
 - [ ] Types - Primitives
-- [ ] Collections - Arrays etc
 - [ ] Variables
+- [ ] Collections - Arrays etc
 - [ ] Control flow
 - [ ] Iteration
 - [ ] Methods/Functions
