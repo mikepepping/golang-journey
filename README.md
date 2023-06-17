@@ -8,7 +8,7 @@ I aim to ideally have sample code in this repo to look back on, as well as a rea
 ## Things to learn:
 
 ### Foundational
-- [ ] Setting up a project
+- [x] [Setting up a project](https://github.com/mikepepping/golang-journey/tree/main/setup-project)
 - [ ] Types - Primitives
 - [ ] Variables
 - [ ] Collections - Arrays etc
