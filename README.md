@@ -9,8 +9,7 @@ I aim to ideally have sample code in this repo to look back on, as well as a rea
 
 ### Foundational
 - [x] [Setting up a project](https://github.com/mikepepping/golang-journey/tree/main/setup-project)
-- [ ] Types - Primitives
-- [ ] Variables
+- [x] [Variables and Types](https://github.com/mikepepping/golang-journey/tree/main/variables-and-types)
 - [ ] Collections - Arrays etc
 - [ ] Control flow
 - [ ] Iteration
