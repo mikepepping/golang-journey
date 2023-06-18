@@ -1,0 +1,13 @@
+version: '3'
+services:
+  dev:
+    image: golang
+    build:
+      context: .
+    volumes:
+      - .:/app
+    command: bash
+    working_dir: /app
+    tty: true
+    stdin_open: true
+    
