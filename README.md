@@ -10,14 +10,15 @@ I aim to ideally have sample code in this repo to look back on, as well as a rea
 ### Foundational
 - [x] [Setting up a project](https://github.com/mikepepping/golang-journey/tree/main/setup-project)
 - [x] [Variables and Primitives](https://github.com/mikepepping/golang-journey/tree/main/variables-and-types)
-- [ ] Types
 - [ ] Collections - Arrays etc
 - [ ] Control flow
 - [ ] Iteration
-- [ ] Methods/Functions
+- [ ] Functions
+- [x] [Structs](https://github.com/mikepepping/golang-journey/tree/main/structs)
 - [x] [Package handling](https://github.com/mikepepping/golang-journey/tree/main/package-handling)
 - [ ] Error handling
-- [ ] Code Structure
+- [ ] Interfaces
+- [ ] Generics
 - [ ] Testing
 
 ### Learning Excercises
