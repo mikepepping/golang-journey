@@ -1,17 +1,12 @@
 package main
 
 import (
+	"os"
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"github.com/gorilla/mux"
+	propelauth "github.com/propelauth/propelauth-go/pkg"
 )
-
-type User struct {
-	Id 	string `json:"id"`
-	Name 	string `json:"name"`
-	Email 	string `json:"email"`
-}
 
 func main() {
 	router := mux.NewRouter()
@@ -21,15 +16,29 @@ func main() {
 
 func MeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("Content-Type", "application/json")
+
+	propelApiKey := os.Getenv("PROPELAUTH_API_KEY")
+	propelAuthUrl := os.Getenv("PROPELAUTH_AUTH_URL")
+	propel_client, err := propelauth.InitBaseAuth(propelAuthUrl, propelApiKey, nil)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
+	user, err := propel_client.GetUser(r.Header.Get("Authorization"))
+	if err != nil {
+		w.WriteHeader(http.StatusUnauthorized)
+		return
+	}
+
 	w.WriteHeader(http.StatusOK)
 
-	user := User{ "id", "name", "email@email.com" }
-	serialized, err := json.Marshal(user)
+	serialized, err	:= json.Marshal(user)
 	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(string(serialized))
+		w.WriteHeader(http.StatusInternalServerError)
+		return
 	}
+
 	w.Write([]byte(serialized))
 }
 
