@@ -1,27 +1,28 @@
 package main
 
 import (
-	"os"
+	"database/sql"
+	"encoding/json"
 	"fmt"
 	"net/http"
-	"encoding/json"
-	"database/sql"
-	_ "github.com/mattn/go-sqlite3"
+	"os"
+
 	"github.com/gorilla/mux"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 type LoginForm struct {
-	Email string `json:email`
-	Password string `json:password`
+	Email    string `json:"email"`
+	Password string `json:"password"`
 }
 
 type SignupForm struct {
-	Email string `json:email`
-	Password string `json:password`
+	Email    string `json:"email"`
+	Password string `json:"password"`
 }
 
 type SignupResponse struct {
-	Email string `json:email`
+	Email string `json:"email"`
 }
 
 func (sf *SignupForm) isValid() bool {
@@ -32,17 +33,17 @@ func (sf *SignupForm) isValid() bool {
 }
 
 type UserResponse struct {
-	Email string `json:email`
+	Email string `json:"email"`
 }
 
 type AccessReponse struct {
-	AccessToken string `json:accessToken`
+	AccessToken string `json:"accessToken"`
 }
 
 type ErrorResponse struct {
-	Code uint `json:code`
-	Name string `json:name`
-	Message string `json:message`
+	Code    uint   `json:"code"`
+	Name    string `json:"name"`
+	Message string `json:"message"`
 }
 
 var db *sql.DB
@@ -145,7 +146,7 @@ func SignupHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	response := SignupResponse { signupForm.Email }
+	response := SignupResponse{signupForm.Email}
 	serialized, err := json.Marshal(response)
 	if err != nil {
 		http.Error(w, "Failed to serialize response", http.StatusInternalServerError)
